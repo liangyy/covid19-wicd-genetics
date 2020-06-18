@@ -8,6 +8,6 @@ Submit job on CRI:
 
 ```
 qsub -v \
-  ID=covid19hg_ANA5_20200508,MISCTOOLS=/gpfs/data/im-lab/nas40t2/yanyul/GitHub/misc-tools \
+  MYID=covid19hg_ANA5_20200508,MISCTOOLS=/gpfs/data/im-lab/nas40t2/yanyul/GitHub/misc-tools \
   submit_on_cri.qsub 
 ```
