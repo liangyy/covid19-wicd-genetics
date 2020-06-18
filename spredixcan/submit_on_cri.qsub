@@ -1,0 +1,15 @@
+#PBS -S /bin/bash
+#PBS -l walltime=24:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -l mem=8gb
+#PBS -e job_${ID}.err
+#PBS -o job_${ID}.out
+
+source ~/.bash_profile
+source ~/.bashrc
+
+
+export SNMK=/gpfs/data/im-lab/nas40t2/yanyul/softwares/miniconda2/envs/mixqtl/bin/snakemake
+conda activate metaxcan
+
+$SNMK -s $MISCTOOLS/spredixcan_workflow/spredixcan_pipe.snmk --configfile config.$ID.yaml -p > job_$ID.log 2>&1
